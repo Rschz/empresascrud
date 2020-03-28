@@ -9,13 +9,18 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { EmpresaPage } from './empresa/empresa.page';
+import { EmpresaPageModule } from './empresa/empresa.module';
+import { CreateOrUpdatePageModule } from './create-or-update/create-or-update.module';
+import { CreateOrUpdatePage } from './create-or-update/create-or-update.page';
+
 
 
 
 @NgModule({
   declarations: [AppComponent],
-  entryComponents: [],
-  imports: [BrowserModule, HttpClientModule, IonicModule.forRoot(), AppRoutingModule],
+  entryComponents: [EmpresaPage, CreateOrUpdatePage],
+  imports: [BrowserModule, HttpClientModule, IonicModule.forRoot(), AppRoutingModule, EmpresaPageModule, CreateOrUpdatePageModule],
   providers: [
     StatusBar,
     SplashScreen,

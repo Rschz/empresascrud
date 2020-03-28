@@ -1,5 +1,5 @@
 export interface IEmpresa {
-    empresaId: number;
+    empresaID: number;
     nombre: string;
     correo: string;
     direccion: string;

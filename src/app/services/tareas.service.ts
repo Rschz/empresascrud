@@ -23,9 +23,15 @@ export class TareasService {
     return this.http.get<IEmpresa>(`${environment.apiURL}empresa/${id}`);
   }
 
-  getFromPH(){
-    const api = 'https://jsonplaceholder.typicode.com/users';
+  addEmpresa(empresa:IEmpresa){
+    return this.http.post(`${environment.apiURL}empresa`, empresa);
+  }
 
-    return this.http.get(api);
+  updateEmpresa(empresa:IEmpresa){
+   return this.http.put(`${environment.apiURL}empresa/${empresa.empresaID}`, empresa);
+  }
+
+  deleteEmpresa(id:string){
+    return this.http.delete(`${environment.apiURL}empresa/${id}`);
   }
 }
