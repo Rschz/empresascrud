@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { TareasService } from "../services/tareas.service";
 import { IEmpresa } from "../interfaces/iempresa";
-import { ModalController, AlertController } from '@ionic/angular';
+import { ModalController, AlertController, Platform } from '@ionic/angular';
 import { EmpresaPage } from '../empresa/empresa.page';
 import { CreateOrUpdatePage } from '../create-or-update/create-or-update.page';
 
@@ -19,7 +19,8 @@ export class HomePage {
   constructor(
     private tareasService: TareasService,
     private modalController: ModalController,
-    private alertController: AlertController
+    private alertController: AlertController,
+    private platform:Platform
   ) {
     this.getAll();
   }
@@ -59,14 +60,14 @@ export class HomePage {
       message: '¿Seguro que desea eliminar?',
       buttons: [
         {
-          text: 'Cancel',
+          text: 'Cancelar',
           role: 'cancel',
           cssClass: 'secondary',
           handler: () => {
             return false;
           }
         }, {
-          text: 'Okay',
+          text: 'Ok',
           handler: () => {
               this.tareasService.deleteEmpresa(id).subscribe(() => 
                 {

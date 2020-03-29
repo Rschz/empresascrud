@@ -1,10 +1,7 @@
 <ion-content [fullscreen]="true">
   <ion-header >              
     <ion-toolbar>      
-      <ion-buttons collapse="true" slot="end">
-        <ion-button color="danger">Salir</ion-button>
-      </ion-buttons>
-      <ion-title size="large">EmpresasCRUD</ion-title>
+      <ion-title>EmpresasCRUD</ion-title>
     </ion-toolbar>
     <ion-toolbar>
       <ion-searchbar placeHolder="Escribir ID o nombre" inputMode="search" #texto animated [(ngModel)]="valorBusc" (ionChange)="empresasFilter()"></ion-searchbar>
